@@ -43,7 +43,8 @@ func (m *txObjectMap) Add(txObj *txObject, limitPerAccount int) error {
 	}
 
 	if m.quota[txObj.Origin()] >= limitPerAccount {
-		return errors.New("account quota exceeded")
+		//Commenting to avoid getting errors for account quota
+		//return errors.New("account quota exceeded")
 	}
 
 	m.quota[txObj.Origin()]++
